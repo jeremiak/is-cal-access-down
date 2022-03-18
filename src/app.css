@@ -1,0 +1,321 @@
+:root {
+	--h1-size: 54px;
+	--h2-size: 34px;
+	--h3-size: 26px;
+	--h4-size: 25px;
+	--h5-size: 20px;
+	--h6-size: 18px;
+	--p-size: 18px;
+	--caption-size: 13px;
+	--interstate: 'interstate', 'Helvetica', 'sans-serif';
+	--interstateCondensed: 'interstate-condensed', 'Helvetica', 'sans-serif';
+	/*
+			PRIMARY PALETTE
+			DO
+			+ Use and prioritize California Sunshine as much as possible!
+			+ When in doubt, ALWAYS refer to this doc as the single source of truth -- or ask a product designer.
+			+ Use California Sunshine's variants to accent and complement California Sunshine.
+			+ Use dark text over these colors, or if using as text place over dark backgrounds.
+			+ Use additional primary variations only in extreme edge-cases, as the need arises.
+			+ Use mainly for UI or data visualization when needing several colors and to distinguish colors tone-to-tone.
+			DON'T
+			+ Don't use accent colors on their own, to represent CalMatters.
+			+ Don't trust and/or follow design patterns you see in production unless they adhere to this guide.
+			+ Don't use any variants of California Sunshine in place of California Sunshine.
+			+ Don't use white or light text over these colors, or if using as text don't place over white or light backgrounds.
+			+ Don't use California Sunshine's variants without the presence of California Sunshine, especially in imagery and/or marketing materials.
+			+ Test contrast - https://coolors.co/contrast-checker/05a0c4-ffffff
+	*/
+	--primary_v1: #ce7105;
+	--primary_v2: #d97e07;
+	--primary_v3: #e58d23;
+	--primary_v4: #f4a045;
+	--primary_v5: #f5ad3c;
+	--primary: #f4bb32;
+	--primary_v6: #f9c647;
+	--primary_v7: #fed05b;
+	--primary_v8: #ffda83;
+	--primary_v9: #fde19c;
+	--primary_v10: #fdf3c8;
+	--primary_v11: #fff9e8;
+	/*
+			SECONDARY PALETTE
+			DO
+			+ Use Aqua Blue and its variants as accents, complementing the primary color especially in imagery or marketing material.
+			+ Use dark text over the secondary light colors, or if using as text place over dark backgrounds.
+			+ Use light text over the secondary dark colors, or if using as text place over light backgrounds.
+			+ Use additional secondary variants ONLY in the outermost of edge-cases, as the need arises. 
+			+ Use mainly for UI or data visualization when needing several colors and to distinguish colors tone-to-tone.
+			DON'T
+			+ Don't use the Aqua Blue or its variants without the presence of California Sunshine, EXCEPT when using them as link or UI colors.
+			+ Don't use light text over the secondary light colors, or if using as text don't place over light backgrounds.
+			+ Don't use dark text over the secondary dark colors, or if using as text don't place over dark backgrounds.
+			+ Test contrast - https://coolors.co/contrast-checker/05a0c4-ffffff
+	*/
+	--secondary_v1: #035263;
+	--secondary_v2: #016278;
+	--secondary_v3: #00728d;
+	--secondary_v4: #0a819f;
+	--secondary_v5: #048ca9;
+	--secondary_v6: #0496b6;
+	--secondary_v7: #05a0c4;
+	--secondary: #04bad8;
+	--secondary_v8: #5fcbe4;
+	--secondary_v9: #76d3ea;
+	--secondary_v10: #9fe4f6;
+	--secondary_v11: #cef3fd;
+	/*
+			TERTIARY PALETTE
+			DO
+			+ Use Orangeade sparingly for light accents mainly in imagery and marketing material.
+			+ If using as a text color place Orangeade over dark backgrounds only.
+			+ Use the Orangeade palette to complement both the primary and secondary palette.
+			+ Use the Orangeade variations VERY sparingly as occasional accent colors.
+			+ Use additional tertiary variants only in REALLY edgy edge cases. 
+			+ Use mainly for UI or data visualization when needing several colors and to distinguish tone-to-tone.
+		
+			DON'T
+			+ Don't use Orangeade as a background color or in a way that makes it visually dominate a graphic or UI.
+			+ Don't use Orangeade over light backgrounds when using as text.
+			+ Don't use the Orangeade palette without the presence of primary AND secondary colors.
+			+ Don't use Orangeade variations as background colors or in a way that makes it visually dominate.
+			+ Don't use the Orangeade palette unless you have a STRONG need for additional colors.
+			+ Don't use additional tertiary variants without the presence of California Sunshine AND Aqua Blue especially when used in imagery and/or marketing materials.
+			+ Test contrast - https://coolors.co/contrast-checker/05a0c4-ffffff
+	*/
+	--tertiary_v1: #762304;
+	--tertiary_v2: #981800;
+	--tertiary_v3: #b42f07;
+	--tertiary_v4: #d34015;
+	--tertiary_v5: #de4a20;
+	--tertiary: #ec4f2e;
+	--tertiary_v6: #eb642c;
+	--tertiary_v7: #f47953;
+	/*
+			GRAYSCALE PALETTE
+			DO
+			+ Use the grayscale Onyx palette as utilitarian colors for text, backgrounds, and UI elements to create high contrast and/or negative space.
+			+ Use light text over these dark grayscale colors, or if using as text place over light backgrounds.
+			+ Use dark text over the light grayscale colors, or if using as text place over dark backgrounds.
+			DON'T
+			+ Don't use the Onyx palette without primary colors, EXCEPT in cases when only grayscale colors can create enough contrast or in monochrome situations.
+			+ Don't use dark text over the dark grayscale colors, or if using as text don't place over dark backgrounds.
+			+ Don't use light text over the light grayscale colors, or if using as text don't place over light backgrounds.
+			+ Test contrast - https://coolors.co/contrast-checker/05a0c4-ffffff
+	*/
+	--grayscale_v1: #111111;
+	--grayscale_v2: #212121;
+	--grayscale_v3: #333333;
+	--grayscale: #474644;
+	--grayscale_v4: #515151;
+	--grayscale_v5: #636363;
+	--grayscale_v6: #767676;
+	--grayscale_v7: #969492;
+	--grayscale_v8: #aaaaaa;
+	--grayscale_v9: #cccac8;
+	--grayscale_v10: #eeeeee;
+	--white: #ffffff;
+	/*
+			EXTRA COLORS
+			DO
+			+ Use these colors sparingly in UI for alerts, errors, or other visual communication edge cases.
+			+ Use in charts, graphs, and other data visualizations IF brand colors have been exhausted in a single publication OR if you have a very specific need for these types of colors.
+			DON'T
+			+ Don't mix these colors with brand colors in imagery and marketing visuals to represent the brand. They are strictly utilitarian.
+			+ Test contrast - https://coolors.co/contrast-checker/05a0c4-ffffff
+	*/
+	--red_v1: #981800;
+	--red_v2: #c71a14;
+	--red: #de1a1a;
+	--red_v3: #de3d2d;
+	--red_v4: #e85c41;
+	--red_v5: #f47953;
+	--red_v6: #fa9773;
+	--red_v7: #ffb495;
+	--red_v8: #ffc7af;
+	--red_v9: #ffd9c9;
+	--green_v1: #3c5d3a;
+	--green_v2: #486d43;
+	--green_v3: #557c4b;
+	--green_v4: #638c54;
+	--green_v5: #719d5c;
+	--green_v6: #80ad65;
+	--green: #90be6d;
+	--green_v7: #a1c983;
+	--green_v8: #afd396;
+	--green_v9: #badaa6;
+	--green_v10: #cce4ba;
+	--green_v11: #e0efd3;
+	--green_v12: #f0f7e9;
+	--purple_v1: #5f3b72;
+	--purple_v2: #6d4a80;
+	--purple_v3: #7b5a8c;
+	--purple: #8d6a9f;
+	--purple_v4: #9c78aa;
+	--purple_v5: #aa87b6;
+	--purple_v6: #c6a5cd;
+	--purple_v7: #d5b5d9;
+	--purple_v8: #ddc4e4;
+	--purple_v9: #e6d2ef;
+	--purple_v10: #f2e8f7;
+	--purple_v11: #f7f0fa;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-size: 100%;
+}
+
+.interstate {
+	font-family: var(--interstate);
+}
+
+.interstateCondensed {
+	font-family: var(--interstateCondensed);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0.25em 0;
+	color: var(--black);
+	line-height: 1.25em;
+}
+
+h6 a {
+	font-family: inherit;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: var(--h2-size);
+	font-family: var(--interstate);
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 2.375em;
+	font-family: var(--interstateCondensed);
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 1.375em;
+	font-family: var(--interstate);
+}
+
+h4 {
+	font-weight: 700;
+	font-size: 1.15em;
+	font-family: var(--interstateCondensed);
+}
+
+p,
+span,
+span a {
+	color: var(--grayscale_v2);
+	font-family: var(--interstate);
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 0;
+}
+
+text {
+	font-family: var(--interstate);
+}
+
+a {
+	color: var(--secondary_v4);
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: var(--blue);
+	text-decoration: underline;
+}
+
+ul {
+	padding: 0.75em 2em 0 2em;
+	list-style-type: square;
+}
+
+li {
+	margin-bottom: 1em;
+	font-size: 1em;
+	line-height: 1.5em;
+	color: var(--black);
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 700;
+}
+
+#cm-container {
+	max-width: 778px;
+}
+
+.caption {
+	font-size: 0.85em;
+	font-weight: 300;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0 0 1em 0;
+	width: 100%;
+	font-size: 14px;
+}
+
+table tr {
+	text-align: left;
+}
+
+table th {
+	vertical-align: bottom;
+	padding-bottom: 10px;
+	text-transform: uppercase;
+	line-height: 11px;
+	text-align: left;
+	font-weight: 100;
+}
+
+table td {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	vertical-align: middle;
+	padding: 7px;
+	white-space: nowrap;
+}
+
+select {
+	appearance: none;
+	border-bottom: 3px solid var(--black);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	background-color: var(--white);
+	font-weight: 400;
+	font-size: 1.375em;
+	text-align: end;
+	padding-right: 1em;
+	background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="utf-8"%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"%3E%3Csvg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="960px" height="560px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve"%3E%3Cg id="Rounded_Rectangle_33_copy_4_1_"%3E%3Cpath d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937 c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937 c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/%3E%3C/g%3E%3C/svg%3E%0A');
+	background-repeat: no-repeat, repeat;
+	background-position: right 0.2em top 50%;
+	background-size: 1em auto, 100%;
+}
