@@ -4,9 +4,6 @@ async function g(url) {
     return new Promise((resolve, reject) => {
         let soFar = []
         https.get(url, res => {
-            console.log('statusCode:', res.statusCode);
-            console.log('headers:', res.headers);
-
             res.on('data', (d) => {
                 soFar.push(d.toString())
             });
