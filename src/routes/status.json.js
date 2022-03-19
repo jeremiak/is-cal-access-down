@@ -1,18 +1,34 @@
-// SvelteKit endpoint documentation
-// https://kit.svelte.dev/docs#routing-endpoints
+import https from 'https'
 
-import { exec as execCb } from 'child_process'
-import { promisify } from 'util'
+async function g(url) {
+    return new Promise((resolve, reject) => {
+        let soFar = []
+        https.get(url, res => {
+            console.log('statusCode:', res.statusCode);
+            console.log('headers:', res.headers);
 
-const exec = promisify(execCb)
+            res.on('data', (d) => {
+                soFar.push(d.toString())
+            });
+
+            resolve({
+                statusCode: res.statusCode,
+                headers: res.headers,
+                body: soFar.join('')
+            })
+        }).on('error', (e) => {
+            console.error(e);
+            reject(e)
+        });
+    })
+}
 
 export async function get() {
-    const response = await exec(`curl -I https://cal-access.sos.ca.gov/`)
-    const { stdout } = response
-
+    const sosUrl = 'https://cal-access.sos.ca.gov/'
+    const { statusCode } = await g(sosUrl)
     let calAccessIsDown = false
 
-    if (!stdout.startsWith('HTTP/2 200')) {
+    if (statusCode !== 200) {
         calAccessIsDown = true
     }
 
