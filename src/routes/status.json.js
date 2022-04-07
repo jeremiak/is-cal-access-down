@@ -2,19 +2,9 @@ import https from 'https'
 
 async function g(url) {
     return new Promise((resolve, reject) => {
-        let soFar = []
         https.get(url, res => {
-            res.on('data', (d) => {
-                soFar.push(d.toString())
-            });
-
-            resolve({
-                statusCode: res.statusCode,
-                headers: res.headers,
-                body: soFar.join('')
-            })
+            resolve({ statusCode: res.statusCode })
         }).on('error', (e) => {
-            console.error(e);
             reject(e)
         });
     })
@@ -22,10 +12,17 @@ async function g(url) {
 
 export async function get() {
     const sosUrl = 'https://cal-access.sos.ca.gov/'
-    const { statusCode } = await g(sosUrl)
     let calAccessIsDown = false
 
-    if (statusCode !== 200) {
+    try {
+        const { statusCode } = await g(sosUrl)
+        console.log({ statusCode })
+
+        if (statusCode !== 200) {
+            calAccessIsDown = true
+        }
+    } catch (e) {
+        console.log("i wonder what kind of error is happening", e)
         calAccessIsDown = true
     }
 
