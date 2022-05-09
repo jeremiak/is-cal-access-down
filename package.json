@@ -22,5 +22,7 @@
         "svelte-preprocess": "^4.9.4"
     },
     "type": "module",
-    "dependencies": {}
+    "dependencies": {
+        "axios": "^0.27.2"
+    }
 }
